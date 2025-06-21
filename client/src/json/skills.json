@@ -1,0 +1,116 @@
+[
+  {
+    "iconKey": "react",
+    "title": "React.js",
+    "description": "Building dynamic and responsive user interfaces with React, leveraging hooks, state management, and modern JavaScript.",
+    "link": "https://react.dev"
+  },
+  {
+    "iconKey": "nodejs",
+    "title": "Node.js",
+    "description": "Creating scalable backend APIs and server-side applications using Node.js, Express, and RESTful architectures.",
+    "link": "https://nodejs.org"
+  },
+  {
+    "iconKey": "python",
+    "title": "Python",
+    "description": "Developing AI-driven applications and automation scripts with Python, utilizing libraries like TensorFlow and FastAPI.",
+    "link": "https://www.python.org"
+  },
+  {
+    "iconKey": "mongodb",
+    "title": "MongoDB",
+    "description": "Designing and managing NoSQL databases with MongoDB for scalable, flexible data storage in full-stack applications.",
+    "link": "https://www.mongodb.com"
+  },
+  {
+    "iconKey": "mysql",
+    "title": "MySQL",
+    "description": "Building relational databases with MySQL, optimizing queries and schemas for robust backend systems.",
+    "link": "https://www.mysql.com"
+  },
+  {
+    "iconKey": "apache",
+    "title": "Apache",
+    "description": "Configuring and deploying web servers with Apache, ensuring high performance and secure hosting.",
+    "link": "https://httpd.apache.org"
+  },
+  {
+    "iconKey": "nginx",
+    "title": "Nginx",
+    "description": "Utilizing Nginx as a web server and reverse proxy to optimize performance and handle high-traffic applications.",
+    "link": "https://nginx.org"
+  },
+  {
+    "iconKey": "dotnet",
+    "title": ".NET",
+    "description": "Developing cross-platform applications with .NET, focusing on MAUI and C# for mobile and desktop solutions.",
+    "link": "https://dotnet.microsoft.com"
+  },
+  {
+    "iconKey": "javascript",
+    "title": "JavaScript",
+    "description": "Crafting interactive web experiences with JavaScript, powering both frontend and backend development.",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  },
+  {
+    "iconKey": "typescript",
+    "title": "TypeScript",
+    "description": "Enhancing JavaScript with TypeScript for type-safe, scalable, and maintainable codebases.",
+    "link": "https://www.typescriptlang.org"
+  },
+  {
+    "iconKey": "socketio",
+    "title": "Socket.IO",
+    "description": "Implementing real-time, bidirectional communication in applications using Socket.IO for seamless user experiences.",
+    "link": "https://socket.io"
+  },
+  {
+    "iconKey": "tailwindcss",
+    "title": "Tailwind CSS",
+    "description": "Styling responsive and modern UIs efficiently with Tailwind CSS, streamlining design workflows.",
+    "link": "https://tailwindcss.com"
+  },
+  {
+    "iconKey": "aws",
+    "title": "AWS",
+    "description": "Deploying and managing cloud-based applications with AWS, utilizing services like EC2, S3, and Lambda.",
+    "link": "https://aws.amazon.com"
+  },
+  {
+    "iconKey": "fastapi",
+    "title": "FastAPI",
+    "description": "Building high-performance APIs with FastAPI, integrating AI and Python for rapid development.",
+    "link": "https://fastapi.tiangolo.com"
+  },
+  {
+    "iconKey": "postman",
+    "title": "Postman",
+    "description": "Testing and documenting APIs with Postman, ensuring robust and reliable backend integrations.",
+    "link": "https://www.postman.com"
+  },
+  {
+    "iconKey": "docker",
+    "title": "Docker",
+    "description": "Containerizing applications with Docker for consistent development and deployment environments.",
+    "link": "https://www.docker.com"
+  },
+  {
+    "iconKey": "express",
+    "title": "Express.js",
+    "description": "Developing fast and minimalist backend APIs with Express.js, integrated with Node.js ecosystems.",
+    "link": "https://expressjs.com"
+  },
+  {
+    "iconKey": "expo",
+    "title": "Expo",
+    "description": "Simplifying React Native development with Expo, building cross-platform mobile apps efficiently.",
+    "link": "https://expo.dev"
+  },
+  {
+    "iconKey": "androidstudio",
+    "title": "Android Studio",
+    "description": "Creating native Android applications with Android Studio, leveraging Java and Kotlin for mobile solutions.",
+    "link": "https://developer.android.com/studio"
+  }
+]

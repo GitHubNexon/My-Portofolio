@@ -1,0 +1,9 @@
+{
+  "commands": [
+    "init: configure core services",
+    "fetch: load dynamic assets",
+    "sync: align backend APIs",
+    "build: compile frontend modules",
+    "deploy: activate live environment"
+  ]
+}

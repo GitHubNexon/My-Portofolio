@@ -1,0 +1,46 @@
+{
+  "timeline": [
+    {
+      "year": 2021,
+      "events": [
+        "Began my coding journey with HTML and CSS",
+        "Mastered the fundamentals of PHP and JavaScript",
+        "Explored C++ programming"
+      ]
+    },
+    {
+      "year": 2022,
+      "events": [
+        "Expanded my skills with Python and C#",
+        "Developed my first web application",
+        "Created a Python-based scientific calculator named Sci-Cal"
+      ]
+    },
+    {
+      "year": 2023,
+      "events": [
+        "Dive into frameworks and libraries like React.js and studied software architecture",
+        "Experimented with Node.js and other modern libraries",
+        "Built my first backend CRUD API using REST, MySQL, Apache, Node.js, and PHP"
+      ]
+    },
+    {
+      "year": 2024,
+      "events": [
+        "Mastered the MERN stack for full-stack development",
+        "Developed a student management system, my first project using Git and GitHub for version control",
+        "Completed an internship at the Bureau of Animal Industry, creating a PET mobile registration app using .NET MAUI, C#, and .NET Framework",
+        "Landed my first role as a Junior App Developer at a private company"
+      ]
+    },
+    {
+      "year": 2025,
+      "events": [
+        "Continued building full-stack web applications",
+        "Led programming for my thesis project, 'Luntian,' a web-based plant disease detection system using AI and computer vision",
+        "Explored Next.js, FastAPI, and LLM AI integration to automate workflows",
+        "Graduated with a Bachelor of Science in Computer Science, earning awards for Best Programmer and Best Thesis"
+      ]
+    }
+  ]
+}

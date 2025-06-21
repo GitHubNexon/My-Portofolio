@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=Geologica:wght@100..900&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  --background: #333446;
+  --foreground: #eaefef;
+  --muted-blue: #7f8caa;
+  --muted-cyan: #b8cfce;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-caprasimo: "Caprasimo", cursive;
+  --font-geologica: "Geologica", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #333446;
+    --foreground: #eaefef;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geologica), var(--font-caprasimo), sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+@keyframes blinkCursor {
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes typeAndDelete {
+  0%,
+  10% {
+    width: 0;
+  }
+  45%,
+  55% {
+    width: calc(var(--command-length) * 0.6em);
+  }
+  90%,
+  100% {
+    width: 0;
+  }
+}
+
+.animate-typeAndDelete {
+  animation: typeAndDelete 4s steps(11) infinite;
+}
+
+.animate-blinkCursor {
+  animation: blinkCursor 0.5s step-end infinite alternate;
+}
