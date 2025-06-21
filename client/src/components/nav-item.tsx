@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 interface NavItemProps {
   path: string;
   icon: IconType;
-  label: string;
+  label?: string;
   isMobile?: boolean;
   index?: number; // 🔥 add this
 }
@@ -62,7 +62,7 @@ export default function NavItem({
         {!isMobile && <span className="text-sm">{label}</span>}
       </a>
 
-      {isMobile && tooltip && (
+      {isMobile && tooltip && label && (
         <div className="absolute bottom-14 left-1/2 transform -translate-x-1/2 bg-[var(--muted-blue)] text-[var(--foreground)] text-xs rounded py-1 px-2 whitespace-nowrap z-50 pointer-events-none">
           {label}
         </div>

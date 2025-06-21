@@ -3,6 +3,30 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
+// Interface for minimal position object
+interface Position {
+  x: number;
+  y: number;
+}
+
+// Interface for Point object
+interface Point extends Position {
+  originX: number;
+  originY: number;
+  active: number;
+  circle: Circle;
+  closest: Point[];
+}
+
+// Interface for Circle object
+interface Circle {
+  pos: Point;
+  radius: number;
+  color: string;
+  active: number;
+  draw: () => void;
+}
+
 const InteractiveBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const headerRef = useRef<HTMLDivElement | null>(null);
@@ -12,8 +36,8 @@ const InteractiveBackground = () => {
     let height: number;
     let canvas: HTMLCanvasElement;
     let ctx: CanvasRenderingContext2D;
-    let points: any[] = [];
-    let target = { x: 0, y: 0 };
+    let points: Point[] = [];
+    let target: Position = { x: 0, y: 0 };
     let animateHeader = true;
 
     function initHeader() {
@@ -27,7 +51,6 @@ const InteractiveBackground = () => {
       canvas.width = width;
       canvas.height = height;
       ctx = canvas.getContext("2d")!;
-      // headerRef.current.style.height = `${height}px`;
       headerRef.current.style.height = "100%";
 
       points = [];
@@ -35,13 +58,21 @@ const InteractiveBackground = () => {
         for (let y = 0; y < height; y += height / 20) {
           const px = x + (Math.random() * width) / 20;
           const py = y + (Math.random() * height) / 20;
-          const p = { x: px, originX: px, y: py, originY: py };
+          const p: Point = {
+            x: px,
+            originX: px,
+            y: py,
+            originY: py,
+            active: 0,
+            circle: {} as Circle,
+            closest: [],
+          };
           points.push(p);
         }
       }
 
       for (let i = 0; i < points.length; i++) {
-        const closest: any[] = [];
+        const closest: Point[] = [];
         const p1 = points[i];
         for (let j = 0; j < points.length; j++) {
           const p2 = points[j];
@@ -63,7 +94,7 @@ const InteractiveBackground = () => {
         p1.closest = closest;
       }
 
-      for (let i in points) {
+      for (const i in points) {
         points[i].circle = new Circle(
           points[i],
           2 + Math.random() * 2,
@@ -93,7 +124,7 @@ const InteractiveBackground = () => {
       if (!ctx || !animateHeader) return requestAnimationFrame(animate);
 
       ctx.clearRect(0, 0, width, height);
-      for (let i in points) {
+      for (const i in points) {
         const p = points[i];
         const dist = getDistance(target, p);
         p.active =
@@ -105,7 +136,7 @@ const InteractiveBackground = () => {
       requestAnimationFrame(animate);
     }
 
-    function shiftPoint(p: any) {
+    function shiftPoint(p: Point) {
       gsap.to(p, {
         duration: 1 + Math.random(),
         x: p.originX - 50 + Math.random() * 100,
@@ -115,9 +146,9 @@ const InteractiveBackground = () => {
       });
     }
 
-    function drawLines(p: any) {
+    function drawLines(p: Point) {
       if (!p.active || !ctx) return;
-      for (let i in p.closest) {
+      for (const i in p.closest) {
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.lineTo(p.closest[i].x, p.closest[i].y);
@@ -127,15 +158,17 @@ const InteractiveBackground = () => {
     }
 
     class Circle {
-      pos: any;
+      pos: Point;
       radius: number;
       color: string;
       active: number = 0;
-      constructor(pos: any, rad: number, color: string) {
+
+      constructor(pos: Point, rad: number, color: string) {
         this.pos = pos;
         this.radius = rad;
         this.color = color;
       }
+
       draw() {
         if (!this.active || !ctx) return;
         ctx.beginPath();
@@ -145,7 +178,7 @@ const InteractiveBackground = () => {
       }
     }
 
-    function getDistance(p1: any, p2: any) {
+    function getDistance(p1: Position, p2: Position) {
       return (p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2;
     }
 
@@ -165,19 +198,6 @@ const InteractiveBackground = () => {
   }, []);
 
   return (
-    // <div
-    //   ref={headerRef}
-    //   id="large-header"
-    //   style={{
-    //     position: "relative",
-    //     width: "100%",
-    //     background: "#333446",
-    //     overflow: "hidden",
-    //     backgroundSize: "cover",
-    //     backgroundPosition: "center center",
-    //     zIndex: 1,
-    //   }}
-    // >
     <div
       ref={headerRef}
       id="large-header"
@@ -191,7 +211,7 @@ const InteractiveBackground = () => {
         backgroundSize: "cover",
         backgroundPosition: "center center",
         zIndex: 1,
-        pointerEvents: "none", // Optional: ensures it doesn't block clicks
+        pointerEvents: "none",
       }}
     >
       <canvas ref={canvasRef} id="demo-canvas" style={{ display: "block" }} />

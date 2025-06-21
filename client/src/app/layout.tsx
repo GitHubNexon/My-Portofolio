@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 import CursorWrapper from "@/components/cursor-wrapper";
 
 export const metadata = {
-  title: "jay.yem - Portfolio",
+  title: "jay-yem-portfolio",
   description:
     "Portfolio of John Mark Pulmano, a Full Stack Developer specializing in AI, web, and mobile solutions.",
   keywords:

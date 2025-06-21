@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { StaticImageData } from "next/image";
 import {
   FaGithub,
   FaExternalLinkAlt,
@@ -12,7 +13,7 @@ import React from "react";
 interface ProjectCardProps {
   title: string;
   description: string;
-  imageUrl: string;
+  imageUrl: string | StaticImageData;
   githubUrl?: string;
   liveUrl?: string;
   appUrl?: {

@@ -7,8 +7,11 @@ import "aos/dist/aos.css";
 import data from "../json/about.json";
 import { FaCalendarAlt } from "react-icons/fa";
 
-// Reusable List Item Component
-const ListItem = ({ children, className }) => (
+// ✅ Reusable List Item Component
+const ListItem: React.FC<{ children: React.ReactNode; className?: string }> = ({
+  children,
+  className = "",
+}) => (
   <motion.li
     className={`text-start mb-2 max-sm:mb-1 text-base max-sm:text-sm ${className}`}
   >
@@ -16,8 +19,8 @@ const ListItem = ({ children, className }) => (
   </motion.li>
 );
 
-// Reusable Section Header
-const SectionHeader = ({ title }) => (
+// ✅ Reusable Section Header
+const SectionHeader: React.FC<{ title: string }> = ({ title }) => (
   <motion.h3
     className="mb-4 text-2xl max-sm:text-xl md:text-3xl font-semibold"
     initial={{ opacity: 0, y: -10 }}
@@ -28,8 +31,12 @@ const SectionHeader = ({ title }) => (
   </motion.h3>
 );
 
-// Reusable Timeline Card
-const TimelineCard = ({ year, events, index }) => (
+// ✅ Reusable Timeline Card
+const TimelineCard: React.FC<{
+  year: string;
+  events: string[];
+  index: number;
+}> = ({ year, events, index }) => (
   <motion.article
     className="bg-[var(--background)] rounded-lg p-6 max-sm:p-4 shadow-md border border-[var(--muted-blue)] text-[var(--foreground)]"
     data-aos="fade-right"
@@ -60,6 +67,7 @@ const TimelineCard = ({ year, events, index }) => (
   </motion.article>
 );
 
+// ✅ Main About Container Component
 export default function AboutContainer() {
   useEffect(() => {
     AOS.init({
@@ -67,7 +75,7 @@ export default function AboutContainer() {
     });
   }, []);
 
-  const { timeline, hobbies } = data;
+  const { timeline } = data;
 
   return (
     <motion.section className="px-8 max-sm:px-4 py-8 max-sm:py-6 max-w-6xl mx-auto">
@@ -87,9 +95,19 @@ export default function AboutContainer() {
       <SectionHeader title="Timeline" />
 
       <div className="flex flex-col gap-4 max-sm:gap-3">
-        {timeline.map(({ year, events }, index) => (
-          <TimelineCard key={year} year={year} events={events} index={index} />
-        ))}
+        {timeline.map(
+          (
+            item: { year: string; events: string[] }, // explicit typing for clarity
+            index: number
+          ) => (
+            <TimelineCard
+              key={item.year}
+              year={item.year}
+              events={item.events}
+              index={index}
+            />
+          )
+        )}
       </div>
     </motion.section>
   );

@@ -1,7 +1,7 @@
 {
   "timeline": [
     {
-      "year": 2021,
+      "year": "2021",
       "events": [
         "Began my coding journey with HTML and CSS",
         "Mastered the fundamentals of PHP and JavaScript",
@@ -9,7 +9,7 @@
       ]
     },
     {
-      "year": 2022,
+      "year": "2022",
       "events": [
         "Expanded my skills with Python and C#",
         "Developed my first web application",
@@ -17,7 +17,7 @@
       ]
     },
     {
-      "year": 2023,
+      "year": "2023",
       "events": [
         "Dive into frameworks and libraries like React.js and studied software architecture",
         "Experimented with Node.js and other modern libraries",
@@ -25,7 +25,7 @@
       ]
     },
     {
-      "year": 2024,
+      "year": "2024",
       "events": [
         "Mastered the MERN stack for full-stack development",
         "Developed a student management system, my first project using Git and GitHub for version control",
@@ -34,7 +34,7 @@
       ]
     },
     {
-      "year": 2025,
+      "year": "2025",
       "events": [
         "Continued building full-stack web applications",
         "Led programming for my thesis project, 'Luntian,' a web-based plant disease detection system using AI and computer vision",

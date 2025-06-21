@@ -1,13 +1,7 @@
 "use client";
 
 import NavItem from "./nav-item";
-import {
-  FaUser,
-  FaCode,
-  FaProjectDiagram,
-  FaEnvelope,
-  FaHome,
-} from "react-icons/fa";
+import { FaUser, FaCode, FaProjectDiagram, FaEnvelope } from "react-icons/fa";
 import Image from "next/image";
 import profilePic from "@/assets/images/profile.png";
 import ModeButton from "./mode-button";

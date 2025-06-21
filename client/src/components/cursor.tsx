@@ -8,7 +8,7 @@ const NUM_CIRCLES = 20;
 type CircleType = {
   x: number;
   y: number;
-  ref: React.RefObject<HTMLDivElement>;
+  ref: React.RefObject<HTMLDivElement | null>;
 };
 
 export default function Cursor() {
@@ -18,7 +18,7 @@ export default function Cursor() {
       .map(() => ({
         x: 0,
         y: 0,
-        ref: React.createRef<HTMLDivElement>(),
+        ref: React.createRef<HTMLDivElement | null>(),
       }))
   );
 
@@ -40,19 +40,19 @@ export default function Cursor() {
 
     circles.current.forEach((circle, i) => {
       const el = circle.ref.current;
-      if (el) {
-        el.style.position = "fixed";
-        el.style.width = `${CIRCLE_SIZE}px`;
-        el.style.height = `${CIRCLE_SIZE}px`;
-        el.style.borderRadius = "50%";
-        el.style.pointerEvents = "none";
-        el.style.zIndex = "99999999";
-        el.style.top = "0px";
-        el.style.left = "0px";
-        el.style.transformOrigin = "center center";
-        el.style.transition = "background-color 0.3s";
-        el.style.backgroundColor = cssColors[i % cssColors.length];
-      }
+      if (!el) return;
+
+      el.style.position = "fixed";
+      el.style.width = `${CIRCLE_SIZE}px`;
+      el.style.height = `${CIRCLE_SIZE}px`;
+      el.style.borderRadius = "50%";
+      el.style.pointerEvents = "none";
+      el.style.zIndex = "99999999";
+      el.style.top = "0px";
+      el.style.left = "0px";
+      el.style.transformOrigin = "center center";
+      el.style.transition = "background-color 0.3s";
+      el.style.backgroundColor = cssColors[i % cssColors.length];
     });
 
     let animationFrameId: number;

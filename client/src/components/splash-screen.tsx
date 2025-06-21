@@ -27,6 +27,10 @@ const TerminalLoader = () => {
 
   const currentCommand = splashData.commands[currentCommandIndex];
 
+  const style: React.CSSProperties & { [key: string]: string | number } = {
+    "--command-length": currentCommand.length,
+  };
+
   return (
     <div
       className="w-full max-w-sm max-sm:max-w-xs bg-[var(--background)] border border-[var(--muted-blue)] rounded-lg overflow-hidden shadow-lg"
@@ -53,7 +57,7 @@ const TerminalLoader = () => {
       <div className="p-4 max-sm:p-3">
         <span
           className="inline-block text-base max-sm:text-sm font-[var(--font-geologica)] text-[var(--muted-cyan)] whitespace-nowrap overflow-hidden border-r-2 border-[var(--muted-cyan)] animate-typeAndDelete animate-blinkCursor"
-          style={{ "--command-length": currentCommand.length }}
+          style={style}
         >
           {currentCommand}
         </span>
