@@ -1,6 +1,4 @@
 import PageWrapper from "@/components/page-wrapper";
-import InteractiveBackground from "@/components/interactive-background";
-import { HiChevronDown } from "react-icons/hi";
 import SkillsContainer from "@/container/skills-container";
 
 export default function SkillsSection() {

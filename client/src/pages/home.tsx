@@ -2,7 +2,6 @@ import { HiChevronDown } from "react-icons/hi";
 import PageWrapper from "@/components/page-wrapper";
 import HomeContainer from "@/container/home-container";
 import InteractiveBackground from "@/components/interactive-background";
-import ClockCalendar from "@/components/clock-calendar";
 
 export default function HomeSection() {
   return (

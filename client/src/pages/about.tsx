@@ -1,7 +1,5 @@
 import PageWrapper from "@/components/page-wrapper";
 import AboutContainer from "@/container/about-container";
-import InteractiveBackground from "@/components/interactive-background";
-import { HiChevronDown } from "react-icons/hi";
 
 export default function AboutSection() {
   return (
